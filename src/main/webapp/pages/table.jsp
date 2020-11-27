@@ -6,31 +6,39 @@
 <html>
 <head>
     <title>АВТОСАЛОН</title>
+    <link href="../style/css.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <header>
-    <a href="../index.jsp">Добавить</a>
-    <a href="/edit">Изменить</a>
-    <form method="post" action="/delete">
-        <select name="id-car">
-            <c:forEach var="car" items="${requestScope.list}">
-                <option value="${car.id}">${car.brand} ${car.model} ${car.engine.volume}л.с.</option>
-            </c:forEach>
-        </select>
-        <button type="submit">Удалить</button>
-    </form>
-    <form method="post" action="/sort">
-        <span>Сортировать по:</span>
-        <label><input type="radio" name="sort" value="increase" checked>возрастанию</label>
-        <label><input type="radio" name="sort" value="decrease">убыванию</label>
-        <button type="submit">По объёму двигателя</button>
-    </form>
+    <div>
+        <a href="../index.jsp">Добавить</a>
+    </div>
+    <div>
+        <a href="/edit">Изменить</a>
+    </div>
+    <div>
+        <form method="post" action="/delete">
+            <select name="id-car">
+                <c:forEach var="car" items="${requestScope.list}">
+                    <option value="${car.id}">${car.brand} ${car.model} ${car.engine.volume}л.с.</option>
+                </c:forEach>
+            </select>
+            <button type="submit">Удалить</button>
+        </form>
+    </div>
+    <div>
+        <form method="post" action="/sort">
+            <span>Сортировать по:</span>
+            <label><input type="radio" name="sort" value="increase" checked>возрастанию</label>
+            <label><input type="radio" name="sort" value="decrease">убыванию</label>
+            <button type="submit">По цене</button>
+        </form>
+    </div>
 </header>
 <main>
     <table>
         <thead>
             <tr>
-                <th>ID</th>
                 <th>Марка</th>
                 <th>Модель</th>
                 <th>Кузов</th>
@@ -38,12 +46,12 @@
                 <th>Объём двигателя</th>
                 <th>Коробка передач</th>
                 <th>Кол-во ступеней</th>
+                <th>Цена, $</th>
             </tr>
         </thead>
         <tbody>
             <c:forEach var="car" items="${requestScope.list}">
                 <tr>
-                    <td>${car.id}</td>
                     <td>${car.brand}</td>
                     <td>${car.model}</td>
                     <td>${car.bodyCar.value}</td>
@@ -51,6 +59,7 @@
                     <td>${car.engine.volume}</td>
                     <td>${car.transmission.type.value}</td>
                     <td>${car.transmission.stageNumber}</td>
+                    <td>${car.price / 100.0}</td>
                 </tr>
             </c:forEach>
         </tbody>

@@ -14,6 +14,7 @@ public class Car {
     private final BodyCar bodyCar;
     private Engine engine;
     private Transmission transmission;
+    private int price;
 
     private Car(String brand, String model, BodyCar bodyCar) {
         id = UUID.randomUUID();
@@ -32,6 +33,10 @@ public class Car {
 
     public void setTransmission(Transmission transmission) {
         this.transmission = transmission;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
     }
 
     @Override

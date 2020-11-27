@@ -6,21 +6,27 @@
 <html>
 <head>
     <title>Редактирование</title>
+    <link href="../style/css.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <header>
-        <a href="/show">На главную</a>
-    </header>
-    <form method="post" action="/edit">
         <div>
-            <label for="id-car">Выберите машину для редактирования: </label>
-            <select name="id-car" id="id-car">
-                <c:forEach var="car" items="${requestScope.list}">
-                    <option value="${car.id}">${car.brand} ${car.model} ${car.engine.volume}л.с.</option>
-                </c:forEach>
-            </select>
+            <a href="/show">На главную</a>
         </div>
-        <div>
+    </header>
+    <main>
+        <form method="post" action="/edit">
+            <div>
+                <label for="id-car">Выберите машину для редактирования: </label>
+                <select name="id-car" id="id-car">
+                    <c:forEach var="car" items="${requestScope.list}">
+                        <option value="${car.id}">${car.brand} ${car.model} ${car.engine.volume}л.с.</option>
+                    </c:forEach>
+                </select>
+            </div>
+            <div>
+                <label>Цена: <input type="number" min="0" name="price" id="price" value="0.0" step="0.01" required></label>
+            </div>
             <fieldset>
                 <legend>Двигатель</legend>
                 <div>
@@ -52,7 +58,7 @@
                 <button type="submit">Отправить</button>
                 <button type="reset">Сбросить</button>
             </div>
-        </div>
-    </form>
+        </form>
+    </main>
 </body>
 </html>

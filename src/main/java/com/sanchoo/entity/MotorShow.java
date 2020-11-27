@@ -34,9 +34,9 @@ public class MotorShow {
 
     public void sort(String type) {
         if(type.equals("increase")) {
-            carList.sort(Comparator.comparing(Car::getEngine));
+            carList.sort(Comparator.comparing(Car::getPrice));
         } else {
-            carList.sort(Comparator.comparing(Car::getEngine).reversed());
+            carList.sort(Comparator.comparing(Car::getPrice).reversed());
         }
     }
 }

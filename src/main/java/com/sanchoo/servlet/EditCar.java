@@ -40,8 +40,11 @@ public class EditCar extends HttpServlet {
             int stageNumber = Integer.valueOf(req.getParameter("trans-stages"));
             Transmission transmission = Transmission.of(transmType, stageNumber);
 
+            int price = (int) (Double.valueOf(req.getParameter("price")) * 100.0);
+
             car.setTransmission(transmission);
             car.setEngine(engine);
+            car.setPrice(price);
         }
 
         List<Car> list = MotorShow.getInstance().getCarList();

@@ -5,7 +5,7 @@ import lombok.Getter;
 import java.util.Objects;
 
 @Getter
-public class Engine implements Comparable<Engine> {
+public class Engine {
     private final Fuel fuel;
     private final int volume;
 
@@ -38,10 +38,5 @@ public class Engine implements Comparable<Engine> {
                 "fuel=" + fuel +
                 ", volume=" + volume +
                 '}';
-    }
-
-    @Override
-    public int compareTo(Engine o) {
-        return this.volume - o.volume;
     }
 }

@@ -24,12 +24,15 @@ public class AddingCar extends HttpServlet {
         int stageNumber = Integer.valueOf(req.getParameter("trans-stages"));
         Transmission transmission = Transmission.of(transmType, stageNumber);
 
+        int price = (int) (Double.valueOf(req.getParameter("price")) * 100.0);
+
         String brand = req.getParameter("brand");
         String model = req.getParameter("model");
         BodyCar bodyCar = BodyCar.valueOf(req.getParameter("body-type"));
         Car car = Car.of(brand, model, bodyCar);
         car.setEngine(engine);
         car.setTransmission(transmission);
+        car.setPrice(price);
 
         MotorShow.getInstance().addCar(car);
         List<Car> list = MotorShow.getInstance().getCarList();
