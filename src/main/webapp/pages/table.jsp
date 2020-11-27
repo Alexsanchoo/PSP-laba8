@@ -5,18 +5,19 @@
 
 <html>
 <head>
-    <%--<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">--%>
-    <title>Title</title>
+    <title>АВТОСАЛОН</title>
 </head>
 <body>
 <header>
-    <button id="to-index">На главную</button>
-    <script language="JavaScript">
-        let button = document.getElementById("to-index");
-        button.addEventListener("click", function() {
-            document.location.href= "/index.jsp";
-        });
-    </script>
+    <a href="../index.jsp">Добавить</a>
+    <form method="post" action="/delete">
+        <select name="id-car" id="id-car">
+            <c:forEach var="car" items="${requestScope.list}">
+                <option value="${car.id}">${car.id}</option>
+            </c:forEach>
+        </select>
+        <button type="submit">Удалить</button>
+    </form>
 </header>
 <main>
     <table>
