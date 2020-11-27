@@ -1,6 +1,7 @@
 package com.sanchoo.entity;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.UUID;
 
@@ -29,5 +30,13 @@ public class MotorShow {
 
     public Car getCar(UUID id) {
         return carList.stream().filter(obj -> obj.getId().toString().equals(id.toString())).findFirst().get();
+    }
+
+    public void sort(String type) {
+        if(type.equals("increase")) {
+            carList.sort(Comparator.comparing(Car::getEngine));
+        } else {
+            carList.sort(Comparator.comparing(Car::getEngine).reversed());
+        }
     }
 }

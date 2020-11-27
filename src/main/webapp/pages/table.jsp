@@ -19,6 +19,12 @@
         </select>
         <button type="submit">Удалить</button>
     </form>
+    <form method="post" action="/sort">
+        <span>Сортировать по:</span>
+        <label><input type="radio" name="sort" value="increase" checked>возрастанию</label>
+        <label><input type="radio" name="sort" value="decrease">убыванию</label>
+        <button type="submit">По объёму двигателя</button>
+    </form>
 </header>
 <main>
     <table>
