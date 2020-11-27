@@ -10,10 +10,11 @@
 <body>
 <header>
     <a href="../index.jsp">Добавить</a>
+    <a href="/edit">Изменить</a>
     <form method="post" action="/delete">
-        <select name="id-car" id="id-car">
+        <select name="id-car">
             <c:forEach var="car" items="${requestScope.list}">
-                <option value="${car.id}">${car.id}</option>
+                <option value="${car.id}">${car.brand} ${car.model} ${car.engine.volume}л.с.</option>
             </c:forEach>
         </select>
         <button type="submit">Удалить</button>

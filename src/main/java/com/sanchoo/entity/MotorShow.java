@@ -26,4 +26,8 @@ public class MotorShow {
     public List<Car> getCarList() {
         return List.copyOf(carList);
     }
+
+    public Car getCar(UUID id) {
+        return carList.stream().filter(obj -> obj.getId().toString().equals(id.toString())).findFirst().get();
+    }
 }

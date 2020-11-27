@@ -8,6 +8,9 @@
     <title>Автосалон</title>
 </head>
 <body>
+    <header>
+        <a href="/show">На главную</a>
+    </header>
     <form method="post" action="/add">
         <h2>Заполните данные об автомобиле:</h2>
         <fieldset>
