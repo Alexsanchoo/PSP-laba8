@@ -11,10 +11,10 @@
 <body>
 <header>
     <div>
-        <a href="../index.jsp">Добавить</a>
+        <a href="../index.jsp"><div class="link">Добавить</div></a>
     </div>
     <div>
-        <a href="/edit">Изменить</a>
+        <a href="/edit"><div class="link">Изменить</div></a>
     </div>
     <div>
         <form method="post" action="/delete">

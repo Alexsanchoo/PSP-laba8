@@ -11,7 +11,7 @@
 <body>
     <header>
         <div>
-            <a href="/show">На главную</a>
+            <a href="/show"><div class="link">На главную</div></a>
         </div>
     </header>
     <main>
